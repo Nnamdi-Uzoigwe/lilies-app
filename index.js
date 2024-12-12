@@ -3,6 +3,8 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 const userRoute = require('./routes/userRoute')
 const productRoute = require('./routes/productRoute')
+const cartRoute = require('./routes/cartRoute')
+
 
 const app = express()
 const cors = require('cors')
@@ -14,6 +16,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/users", userRoute)
 app.use("/meal", productRoute)
+app.use("/cart", cartRoute )
 
 
 
